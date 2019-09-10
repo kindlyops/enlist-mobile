@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Initial state matches snapshot 1`] = `
+<Modal
+  animationType="fade"
+  onRequestClose={[Function]}
+  transparent={true}
+  visible={true}
+>
+  <ScrollView
+    contentContainerStyle={
+      Array [
+        Object {
+          "justifyContent": "flex-end",
+        },
+        Object {
+          "height": 1334,
+        },
+      ]
+    }
+    keyboardShouldPersistTaps={true}
+    scrollEnabled={false}
+    style={
+      Object {
+        "backgroundColor": "rgba(245,248,251,.99)",
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FCFCFC",
+          "borderTopColor": "#EEEEEE",
+          "borderTopWidth": 1,
+          "flexDirection": "row",
+          "padding": 10,
+        }
+      }
+    >
+      <TextInput
+        autoFocus={true}
+        multiline={true}
+        onChange={[Function]}
+        onSubmitEditing={[Function]}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#FCFCFC",
+              "borderColor": "#EEEEEE",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "fontSize": 13,
+              "marginLeft": 10,
+              "marginRight": 10,
+              "padding": 8,
+            },
+            Object {
+              "flex": 1,
+              "height": 40,
+            },
+          ]
+        }
+        value=""
+      />
+      <View
+        accessible={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#4285F4",
+            "borderRadius": 4,
+            "opacity": 1,
+            "padding": 10,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "#FFFFFF",
+                "fontWeight": "500",
+              },
+              undefined,
+            ]
+          }
+        >
+          Reply
+        </Text>
+      </View>
+    </View>
+  </ScrollView>
+</Modal>
+`;
