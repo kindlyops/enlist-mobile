@@ -9,7 +9,7 @@
     "postinstall": "remotedev-debugger [options]"
   },
   "dependencies": {
-    "@expo/react-native-action-sheet": "1.1.0",
+    "@expo/react-native-action-sheet": "2.1.0",
     "color": "^3.0.0",
     "crypto": "0.0.3",
     "humps": "^1.1.0",
