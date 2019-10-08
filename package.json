@@ -16,7 +16,7 @@
     "immutable": "^3.8.1",
     "jquery-param": "^0.2.0",
     "lodash": "^4.17.2",
-    "moment": "^2.14.1",
+    "moment": "^2.19.3",
     "moment-timezone": "^0.5.5",
     "pluralise": "^1.0.0",
     "pluralize": "^3.0.0",
