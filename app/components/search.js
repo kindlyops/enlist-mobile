@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { fromJS, List } from 'immutable'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { fromJS, List } from "immutable";
+import PropTypes from "prop-types";
 
-import { Platform, Dimensions } from 'react-native'
-import dismissKeyboard from 'react-native-dismiss-keyboard'
+import { Platform, Dimensions } from "react-native";
+import dismissKeyboard from "react-native-dismiss-keyboard";
 
 import {
   ActivityIndicator,
@@ -17,36 +18,36 @@ import {
   ListView,
   Image,
   LayoutAnimation
-} from 'react-native'
+} from "react-native";
 
-import styles from 'enlist/app/styles/search'
-import KeyboardView from 'enlist/app/components/base/keyboardView'
-import { animations } from 'enlist/app/utils'
-import Slide from 'enlist/app/components/animations/slide'
+import styles from "enlist/app/styles/search";
+import KeyboardView from "enlist/app/components/base/keyboardView";
+import { animations } from "enlist/app/utils";
+import Slide from "enlist/app/components/animations/slide";
 
-import { api } from 'enlist/app/utils'
-import { search } from 'enlist/app/actions'
-import { debounce } from 'lodash'
-import pluralise from 'pluralise'
+import { api } from "enlist/app/utils";
+import { search } from "enlist/app/actions";
+import { debounce } from "lodash";
+import pluralise from "pluralise";
 
-let searchImg = require('enlist/app/images/search.png')
-let closeImg = require('enlist/app/images/close.png')
+let searchImg = require("enlist/app/images/search.png");
+let closeImg = require("enlist/app/images/close.png");
 
 class Search extends KeyboardView {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   search(term) {
-    return this.props.dispatch(search(term))
+    return this.props.dispatch(search(term));
   }
 
   render() {
-    let { opacity, visibleHeight } = this.state
-    let { results, isLoading, onStop } = this.props
+    let { opacity, visibleHeight } = this.state;
+    let { results, isLoading, onStop } = this.props;
 
     return (
-      <Modal animationType={'fade'} transparent={true} onRequestClose={onStop}>
+      <Modal animationType={"fade"} transparent={true} onRequestClose={onStop}>
         <StatusBar hidden={true} />
 
         <ScrollView
@@ -58,7 +59,6 @@ class Search extends KeyboardView {
             { height: visibleHeight - 20 }
           ]}
         >
-
           <Slide axis="Y" offset={20}>
             <View style={styles.searchInputWrapper}>
               <Image style={{ height: 16, width: 16 }} source={searchImg} />
@@ -83,13 +83,13 @@ class Search extends KeyboardView {
 
           <TouchableOpacity
             onPress={e => {
-              this.props.onStop()
-              dismissKeyboard()
+              this.props.onStop();
+              dismissKeyboard();
             }}
           />
         </ScrollView>
       </Modal>
-    )
+    );
   }
 
   renderLoading() {
@@ -97,39 +97,39 @@ class Search extends KeyboardView {
       <View style={{ flex: 1, padding: 25 }}>
         <ActivityIndicator color="gray" size="small" animating={true} />
       </View>
-    )
+    );
   }
 
   renderCloseBtn() {
-    const { onStop } = this.props
+    const { onStop } = this.props;
 
-    if (Platform.OS === 'ios') {
+    if (Platform.OS === "ios") {
       return (
         <TouchableOpacity
           onPress={() => {
-            onStop()
-            dismissKeyboard()
+            onStop();
+            dismissKeyboard();
           }}
           style={styles.searchCloseBtn}
         >
           <Image style={{ height: 10, width: 10 }} source={closeImg} />
         </TouchableOpacity>
-      )
+      );
     } else {
-      return null
+      return null;
     }
   }
 
   renderApplications(applications) {
-    let { hasLoaded } = this.props
+    let { hasLoaded } = this.props;
 
     let source = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
-    })
-    let data = source.cloneWithRows(applications)
+    });
+    let data = source.cloneWithRows(applications);
 
     if (applications && applications.length > 0) {
-      let word = pluralise(applications.length, 'application')
+      let word = pluralise(applications.length, "application");
 
       return (
         <View style={{ flex: 1 }}>
@@ -145,13 +145,13 @@ class Search extends KeyboardView {
             style={styles.searchResults}
           />
         </View>
-      )
+      );
     } else if (hasLoaded) {
       return (
         <View style={{ flex: 1, padding: 25 }}>
           <Text>Nothing found.</Text>
         </View>
-      )
+      );
     }
   }
 
@@ -164,8 +164,8 @@ class Search extends KeyboardView {
       job,
       currentStage,
       tags
-    } = application
-    const fullName = (firstName, lastName) => `${firstName} ${lastName}`
+    } = application;
+    const fullName = (firstName, lastName) => `${firstName} ${lastName}`;
 
     return (
       <TouchableOpacity
@@ -173,56 +173,57 @@ class Search extends KeyboardView {
         style={styles.searchResultItem}
         onPress={() => {
           this.props.dispatch({
-            type: 'fetchApplication'
-          })
+            type: "fetchApplication"
+          });
 
           this.props.dispatch({
-            type: 'goTo',
-            route: 'application',
+            type: "goTo",
+            route: "application",
             props: {
               applicationId: id
             }
-          })
+          });
         }}
       >
-
-        <View style={{ flexDirection: 'row' }}>
-          <Text style={{ fontWeight: 'bold' }}>
+        <View style={{ flexDirection: "row" }}>
+          <Text style={{ fontWeight: "bold" }}>
             {fullName(firstName, lastName)}
           </Text>
         </View>
 
-        <View style={{ marginTop: 3, flexDirection: 'row' }}>
-          <Text style={styles.metadata}>
-            {job.title}
-          </Text>
+        <View style={{ marginTop: 3, flexDirection: "row" }}>
+          <Text style={styles.metadata}>{job.title}</Text>
 
           <Text style={{ marginLeft: 5, marginRight: 5 }}>·</Text>
 
-          <Text style={styles.metadata}>
-            {currentStage.name}
-          </Text>
+          <Text style={styles.metadata}>{currentStage.name}</Text>
         </View>
 
         <View style={styles.tags}>
-          {tags.map(tag => <Text key={tag} style={styles.tag}> {tag} </Text>)}
+          {tags.map(tag => (
+            <Text key={tag} style={styles.tag}>
+              {" "}
+              {tag}{" "}
+            </Text>
+          ))}
         </View>
-
       </TouchableOpacity>
-    )
+    );
   }
 }
 
 Search.propTypes = {
-  onStop: React.PropTypes.func.isRequired
-}
+  onStop: PropTypes.func.isRequired
+};
 
 module.exports = connect(state => {
-  const { search: { results, isLoading, hasLoaded } } = state
+  const {
+    search: { results, isLoading, hasLoaded }
+  } = state;
 
   return {
     results,
     isLoading,
     hasLoaded
-  }
-})(Search)
+  };
+})(Search);
