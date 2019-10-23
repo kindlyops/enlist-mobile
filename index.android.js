@@ -5,7 +5,7 @@ import RavenReactNative from "raven-js/plugins/react-native";
 import { sentryDsn } from "enlist/app/config";
 import Package from "enlist/package.json";
 
-import { COLOR, ThemeProvider } from "react-native-material-ui";
+import { COLOR, ThemeContext, getTheme } from "react-native-material-ui";
 
 const uiTheme = {
   palette: {
@@ -35,9 +35,9 @@ class enlist extends Component {
       <View style={{ flex: 1, backgroundColor: "white" }}>
         <StatusBar barStyle="default" />
         <ActionSheetProvider>
-          <ThemeProvider uiTheme={uiTheme}>
+          <ThemeContext.Provider value={getTheme(uiTheme)}>
             <Enlist />
-          </ThemeProvider>
+          </ThemeContext.Provider>
         </ActionSheetProvider>
       </View>
     );
