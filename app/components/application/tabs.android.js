@@ -49,7 +49,7 @@ class ApplicationTabs extends Component {
     let isActive = isActiveRoute(tab)
 
     let activeStyle = isActive ? styles.tabsApplicationItemActive : {}
-    let activeTextStyle = isActive ? [styles.boldText, styles.whiteText] : {}
+    let activeTextStyle = isActive ? [styles.boldText, styles.whiteText] : []
 
     return (
       <TouchableOpacity

@@ -15,7 +15,8 @@ module.exports = {
       },
       delete: {
         type: LayoutAnimation.Types.spring,
-        property: LayoutAnimation.Properties.scaleXY
+        property: LayoutAnimation.Properties.scaleXY,
+        springDamping: 200,
       }
     },
     easeInEaseOut: {
