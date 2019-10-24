@@ -23,11 +23,18 @@ class AddReplyComponent extends Component {
   }
 
   onChange({ nativeEvent }) {
-    let { text, contentSize: { height } } = nativeEvent
+    let { text } = nativeEvent
 
     this.setState({
       email: text,
-      height: height
+    })
+  }
+
+  onContentSizeChange({ nativeEvent }) {
+    let { contentSize: { height } } = nativeEvent
+
+    this.setState({
+      height: height,
     })
   }
 
@@ -49,6 +56,7 @@ class AddReplyComponent extends Component {
             autoFocus={true}
             multiline={true}
             onChange={this.onChange}
+            onContentSizeChange={this.onContentSizeChange}
             onSubmitEditing={this.onSubmit}
             value={email}
             ref="addEmail"
