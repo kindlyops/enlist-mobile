@@ -55,14 +55,14 @@ class AddReplyComponent extends Component {
             style={[styles.addNoteTextArea, { flex: 1, height: height }]}
             autoFocus={true}
             multiline={true}
-            onChange={this.onChange}
-            onContentSizeChange={this.onContentSizeChange}
-            onSubmitEditing={this.onSubmit}
+            onChange={this.onChange.bind(this)}
+            onContentSizeChange={this.onContentSizeChange.bind(this)}
+            onSubmitEditing={this.onSubmit.bind(this)}
             value={email}
             ref="addEmail"
           />
 
-          <Button isLoading={isSaving} onPress={this.onSubmit} label="Reply" />
+          <Button isLoading={isSaving} onPress={this.onSubmit.bind(this)} label="Reply" />
         </View>
       </KeyboardView>
     )
