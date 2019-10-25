@@ -81,6 +81,7 @@ class EmailsList extends Component {
     dispatch(
       addEmail({
         text: text,
+        rawText: text,
         subject: email.get('subject'),
         threadId: email.get('threadId'),
         sendToId: email.get('sendFrom').get('id')
