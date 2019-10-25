@@ -58,14 +58,21 @@ class AddNote extends Component {
   }
 
   onChangeNote({ nativeEvent }) {
-    let { text, contentSize: { height } } = nativeEvent
+    let { text } = nativeEvent
 
     this.setState({
       text: text,
-      actionHeight: height
     })
 
     this.handleMentions(text)
+  }
+
+  onContentSizeChangeNote({ nativeEvent }) {
+    let { contentSize: { height } } = nativeEvent
+
+    this.setState({
+      actionHeight: height
+    })
   }
 
   handleMentions(text) {
@@ -103,6 +110,7 @@ class AddNote extends Component {
             autoFocus={true}
             multiline={true}
             onChange={this.onChangeNote.bind(this)}
+            onContentSizeChange={this.onContentSizeChangeNote.bind(this)}
             onSubmitEditing={this.addNote.bind(this)}
             placeholder="Add a note..."
             value={text}

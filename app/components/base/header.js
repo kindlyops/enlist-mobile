@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 import {
   Text,
@@ -7,34 +7,33 @@ import {
   TouchableOpacity,
   Image,
   Platform,
-  BackAndroid
-} from 'react-native'
+  BackHandler
+} from "react-native";
 
-import routes from 'enlist/app/routes'
-import styles from 'enlist/app/styles'
+import routes from "enlist/app/routes";
+import styles from "enlist/app/styles";
 
-let backButton = require('enlist/app/images/back-light.png')
+let backButton = require("enlist/app/images/back-light.png");
 
 class Header extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   componentDidMount() {
-    if (Platform.OS === 'android') {
-      this.listenToAndroidBack()
+    if (Platform.OS === "android") {
+      const { onBack } = this.props;
+      if (!onBack) return;
+
+      this.backHandler = BackHandler.addEventListener(
+        "hardwareBackPress",
+        onBack.bind(this)
+      );
     }
   }
 
-  listenToAndroidBack() {
-    const { onBack } = this.props
-    if (!onBack) return
-
-    BackAndroid.addEventListener('hardwareBackPress', onBack.bind(this))
-  }
-
   render() {
-    let { label } = this.props
+    let { label } = this.props;
 
     return (
       <View style={styles.header}>
@@ -46,20 +45,20 @@ class Header extends Component {
           {this.renderBackButton()}
         </View>
       </View>
-    )
+    );
   }
 
   renderBackButton() {
-    let { onBack } = this.props
+    let { onBack } = this.props;
 
     if (onBack) {
       return (
         <TouchableOpacity style={styles.headerBackBtn} onPress={onBack}>
           <Image style={{ height: 11, width: 15 }} source={backButton} />
         </TouchableOpacity>
-      )
+      );
     }
   }
 }
 
-module.exports = Header
+module.exports = Header;
