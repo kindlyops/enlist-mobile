@@ -7,8 +7,6 @@ import styles from 'enlist/app/styles'
 import { NotificationHeader, NotificationActions } from './base'
 import { addEmail } from 'enlist/app/actions'
 
-import AddReply from '../../application/addReply'
-
 class Email extends Component {
   constructor(props) {
     super(props)

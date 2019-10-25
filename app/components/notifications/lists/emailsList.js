@@ -5,7 +5,7 @@ import { Text, View } from 'react-native'
 
 import { Email } from '../components'
 
-import AddReply from '../../application/addReply'
+import { AddReply } from '../../application/addReply'
 import { addEmail } from 'enlist/app/actions'
 import styles from 'enlist/app/styles'
 
@@ -64,7 +64,6 @@ class EmailsList extends Component {
 
   renderReply(notification) {
     const { dispatch, users, isSaving } = this.props
-    let text
 
     return (
       <AddReply
