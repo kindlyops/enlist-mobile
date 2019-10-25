@@ -68,7 +68,7 @@ class KeyboardView extends Component {
     return (
       <Modal animationType={"fade"} transparent={true} onRequestClose={onStop}>
         <ScrollView
-          keyboardShouldPersistTaps={true}
+          keyboardShouldPersistTaps="always"
           scrollEnabled={false}
           ref="_scrollView"
           style={styles.keyboardViewWrapper}

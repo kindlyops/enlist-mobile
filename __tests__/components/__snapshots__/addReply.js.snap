@@ -18,7 +18,7 @@ exports[`Initial state matches snapshot 1`] = `
         },
       ]
     }
-    keyboardShouldPersistTaps={true}
+    keyboardShouldPersistTaps="always"
     scrollEnabled={false}
     style={
       Object {
