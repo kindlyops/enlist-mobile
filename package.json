@@ -13,7 +13,7 @@
     "crypto": "0.0.3",
     "humps": "^1.1.0",
     "immutable": "^3.8.1",
-    "jquery-param": "^0.2.0",
+    "jquery-param": "^1.0.4",
     "lodash": "^4.17.2",
     "moment": "^2.14.1",
     "moment-timezone": "^0.5.5",
