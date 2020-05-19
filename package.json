@@ -8,7 +8,7 @@
     "remotedev": "remotedev --hostname=localhost --port=8000 --injectserver=reactnative"
   },
   "dependencies": {
-    "@expo/react-native-action-sheet": "1.1.0",
+    "@expo/react-native-action-sheet": "3.8.0",
     "color": "^3.0.0",
     "crypto": "0.0.3",
     "humps": "^1.1.0",
