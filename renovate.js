@@ -7,7 +7,7 @@ module.exports = {
   prHourlyLimit: 30,
   prCreation: "not-pending",
   pinDigests: true,
-  onboarding: true,
+  onboarding: false,
   dependencyDashboard: true,
   dependencyDashboardApproval: true,
   gitAuthor: "Renovate Bot <bot@renovateapp.com>",
