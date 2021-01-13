@@ -9,6 +9,7 @@ module.exports = {
   pinDigests: true,
   onboarding: true,
   dependencyDashboard: true,
+  dependencyDashboardApproval: true,
   gitAuthor: "Renovate Bot <bot@renovateapp.com>",
   logLevel: "debug",
   requireConfig: false,
