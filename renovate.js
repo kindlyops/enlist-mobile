@@ -8,6 +8,7 @@ module.exports = {
   prCreation: "not-pending",
   pinDigests: true,
   onboarding: true,
+  dependencyDashboard: true,
   gitAuthor: "Renovate Bot <bot@renovateapp.com>",
   logLevel: "debug",
   requireConfig: false,
