@@ -10,7 +10,7 @@
   "dependencies": {
     "@expo/react-native-action-sheet": "1.1.0",
     "color": "^3.0.0",
-    "crypto": "0.0.3",
+    "crypto": "1.0.1",
     "humps": "^1.1.0",
     "immutable": "^3.8.1",
     "jquery-param": "^0.2.0",
