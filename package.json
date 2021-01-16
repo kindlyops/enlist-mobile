@@ -14,7 +14,7 @@
     "humps": "1.1.0",
     "immutable": "3.8.1",
     "jquery-param": "0.2.0",
-    "lodash": "4.17.2",
+    "lodash": "4.17.19",
     "moment": "2.17.1",
     "moment-timezone": "0.5.10",
     "pluralise": "1.0.0",
