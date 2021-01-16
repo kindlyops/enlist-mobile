@@ -20,7 +20,7 @@
     "pluralise": "1.0.0",
     "pluralize": "3.1.0",
     "pusher-js": "3.2.4",
-    "raven-js": "3.9.1",
+    "raven-js": "3.27.2",
     "react": "16.10.2",
     "react-addons-shallow-compare": "15.4.1",
     "react-native": "0.59.10",
