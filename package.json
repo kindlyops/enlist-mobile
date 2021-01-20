@@ -44,7 +44,7 @@
     "babel-register": "6.6.0",
     "chai": "3.5.0",
     "enzyme": "3.10.0",
-    "enzyme-adapter-react-15": "1.4.0",
+    "enzyme-adapter-react-15": "1.4.3",
     "ignore-styles": "4.0.0",
     "jest": "23.2.0",
     "jest-enzyme": "7.1.1",
