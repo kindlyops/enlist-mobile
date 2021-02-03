@@ -26,8 +26,8 @@ module.exports = {
   },
   packageRules: [
     {
-      packageNames: ["renovate"],
-      schedule: ["before 3am on monday"],
+       packageNames: ["*"],
+       schedule: ["on the first day of the month"],
     },
   ],
 };
