@@ -31,7 +31,7 @@
     "react-native-push-notification": "3.0.2",
     "react-native-router-flux": "3.37.0",
     "react-native-tab-view": "0.0.42",
-    "react-native-vector-icons": "6.6.0",
+    "react-native-vector-icons": "6.7.0",
     "react-redux": "4.4.10",
     "redux": "3.6.0",
     "redux-logger": "2.7.4",
