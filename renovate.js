@@ -29,5 +29,9 @@ module.exports = {
        packageNames: ["*"],
        schedule: ["on the first day of the month"],
     },
+    {
+      packageNames: ['renovate'],
+      minor: { enabled: false },
+    },
   ],
 };
