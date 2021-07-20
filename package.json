@@ -23,7 +23,7 @@
     "raven-js": "3.9.1",
     "react": "16.10.2",
     "react-addons-shallow-compare": "15.4.1",
-    "react-native": "0.59.10",
+    "react-native": "0.62.3",
     "react-native-code-push": "5.3.5",
     "react-native-dismiss-keyboard": "1.0.0",
     "react-native-experimental-navigation": "0.26.10",
